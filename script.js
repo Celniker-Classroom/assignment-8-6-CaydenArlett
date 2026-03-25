@@ -15,10 +15,11 @@ function myFunc(){
   return count;
 }
 
-function onRandomClick(max){
+function getRandomNum(max){
   var x = Math.random();
-  if (max > 0 && Number(max) === max){
-    x = Math.floor(max * x).f + 1;
+  max = Number(max);
+  if (max > 0 ){
+    x = Math.floor(max * x) + 1;
   }
   else {
     x = 0;
@@ -39,9 +40,15 @@ function distance(x1, y1, x2, y2){
 }
 
 function quadratic(a, b, c){
-    var x = [0];
+    a = Number(a);
+    b = Number(b);
+    c = Number(c);
+    var x = [];
     x.push((-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a));
     x.push((-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a));
+    if (x[0] == x[1]){
+      x.pop();
+    }
     return x;
 }
 
