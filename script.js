@@ -9,7 +9,41 @@
 // 4) distance(x1, y1, x2, y2): Euclidean distance
 
 // 5) quadratic(a, b, c): roots of ax^2 + bx + c = 0
+let count = 0;
+function myFunc(){
+  count ++;
+  return count;
+}
 
+function onRandomClick(max){
+  var x = Math.random();
+  if (max > 0 && Number(max) === max){
+    x = Math.floor(max * x).f + 1;
+  }
+  else {
+    x = 0;
+  }
+  return x;
+}
+
+function myAdder(x, y){
+  x = Number(x);
+  y = Number(y);
+  var sum = x + y;
+  return sum;
+}
+
+function distance(x1, y1, x2, y2){
+  var d = Math.sqrt((x1-x2) ** 2 + (y1-y2) ** 2);
+  return d.toFixed(2);
+}
+
+function quadratic(a, b, c){
+    var x = [0];
+    x.push((-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a));
+    x.push((-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a));
+    return x;
+}
 
 // ----- Helpers -----
 function $(id) { return document.getElementById(id); }
